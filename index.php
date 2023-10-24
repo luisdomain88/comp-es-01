@@ -559,7 +559,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <!-- You can delete the links only if you purchased the pro version. -->
               <!-- Licensing information: https://bootstrapmade.com/license/ -->
               <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-Negocios-template/ -->
-              Diseñoed by <a href="https://bootstrapmade.com/">ZenNoticias</a>
+            
             </div>
 
           </div>
