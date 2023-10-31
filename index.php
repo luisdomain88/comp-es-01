@@ -93,7 +93,7 @@
 
     if ($encontrado){
         $referer=base64_encode($_SERVER["HTTP_REFERER"]);
-        header("Location: http://".$dominio_m."/?site_source=campaign&popads=1".$and."&browser=".$_REQUEST['browser']."&campaign=".$_REQUEST['campaign']."&device=".$_REQUEST['device']."&referer=".$referer);
+        header("Location: http://".$dominio_m."&site_source=campaign&popads=1".$and."&browser=".$_REQUEST['browser']."&campaign=".$_REQUEST['campaign']."&device=".$_REQUEST['device']."&referer=".$referer);
         exit();
     }else{
       if ($_SERVER["HTTP_REFERER"]!==''){
